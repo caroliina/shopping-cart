@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+// import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: 'app.component.html'
+    // providers: [CheckoutComponent]
 })
-export class AppComponent {
-  title = 'movo-challenge';
+
+export class AppComponent implements OnInit {
+
+    ngOnInit() {
+    }
+
 }
