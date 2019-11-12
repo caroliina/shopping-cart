@@ -15,6 +15,10 @@ import { PricingRulesService } from './services/pricing-rules.service';
   imports: [
     BrowserModule
   ],
+  exports: [
+    ShoppingCartComponent,
+    OrderSummaryComponent
+  ],
   providers: [
     ProductService,
     PricingRulesService

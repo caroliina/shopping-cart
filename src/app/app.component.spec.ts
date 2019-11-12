@@ -1,16 +1,13 @@
 import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+        AppModule
+      ]
     }).compileComponents();
   }));
 
@@ -26,10 +23,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('movo-challenge');
   });
 
-  it('should render title', () => {
+  it('should render titles', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('movo-challenge app is running!');
+    expect(compiled.querySelector('.products h1').textContent).toContain('Shopping cart');
+    expect(compiled.querySelector('.summary h1').textContent).toContain('Order Summary');
   });
 });

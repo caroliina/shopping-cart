@@ -11,8 +11,8 @@ import { Checkout } from '../../classes/checkout/checkout'
 })
 
 export class ShoppingCartComponent implements OnInit {
-  private products: Product[];
-  private values = {
+  products: Product[];
+  values = {
     total: 0,
     discount: 0
   }
