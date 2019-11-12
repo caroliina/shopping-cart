@@ -1,25 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-// import { CheckoutComponent } from './components/checkout/checkout.component';
-import { ProductComponent } from './components/product/product.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { OrderSummaryComponent } from './components/shopping-cart/order-summary/order-summary.component';
 import { ProductService } from './services/product.service';
-import { DiscountsService } from './services/discounts.service';
-import { AppRoutingModule } from './app-routing.module';
+import { PricingRulesService } from './services/pricing-rules.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // CheckoutComponent,
-    ProductComponent
+    ShoppingCartComponent,
+    OrderSummaryComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [
     ProductService,
-    DiscountsService
+    PricingRulesService
   ],
   bootstrap: [AppComponent]
 })

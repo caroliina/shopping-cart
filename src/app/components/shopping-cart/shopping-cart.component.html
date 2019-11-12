@@ -15,7 +15,6 @@
           <img src='assets/img/{{ product.photo }}'>
           <div class="product-description">
             <h1>{{ product.name }}</h1>
-            <p class="product-code">Product code {{ product.id }}</p>
           </div>
         </figure>
       </div>
@@ -34,27 +33,4 @@
   </ul>
 </section>
 
-<aside class="summary">
-  <h1 class="main">Order Summary</h1>
-  <ul class="summary-items wrapper border">
-    <li>
-      <span class="summary-items-number"> Items </span><span class="summary-items-price"><span class="currency">{{ totalBeforeDiscount }}€</span></span>
-    </li>
-  </ul>
-  <div class="summary-discounts wrapper-half border">
-    <h2>Discounts</h2>
-    <ul>
-      <li><span>{{ capDiscountName }}</span><span>-{{ capDiscount }}€</span></li>
-      <li><span>{{ shirtDiscountName }}</span><span>-{{ shirtDiscount }}€</span></li>
-      <!-- <li><span>Promo code</span><span>0€</span></li> -->
-    </ul>
-  </div>
-  <div class="summary-total wrapper">
-    <ul>
-      <li>
-        <span class="summary-total-cost">Total cost</span><span class="summary-total-price">{{ total }}€</span>
-      </li>
-    </ul>
-    <button type="submit">Checkout</button>
-  </div>
-</aside>
+<order-summary [values]="values" [pricingRules]="pricingRules"></order-summary>
