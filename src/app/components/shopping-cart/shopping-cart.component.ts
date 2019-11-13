@@ -18,8 +18,8 @@ export class ShoppingCartComponent implements OnInit {
     discount: 0
   }
   productsCount = 0;
+  pricingRules: PricingRule[];
   private checkOut: Checkout;
-  private pricingRules: PricingRule[];
 
   constructor(
     private productService: ProductService,
