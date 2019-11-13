@@ -42,10 +42,12 @@ export class PricingRulesService {
 
   private shirtRule(): any {
     return function(p: Product, pr: PricingRule) {
+      const discountPercentage = 5;
       let shirtsQuantity = p.quantity;
+      let shirtsPrice = p.price;
       let discount = 0;
-      if (shirtsQuantity >= 2) {
-        discount = shirtsQuantity;
+      if (shirtsQuantity >= 3) {
+        discount = ((shirtsQuantity * shirtsPrice) * discountPercentage) / 100;
       }
       pr.discount = discount;
       return discount;

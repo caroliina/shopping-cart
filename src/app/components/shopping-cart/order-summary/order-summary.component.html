@@ -14,7 +14,7 @@
       <li *ngFor="let rule of pricingRules">
         <span class="discount">{{ rule.name }}</span>
         <span *ngIf="rule.discount > 0; else noDiscount">-{{ rule.discount }}€</span>
-        <ng-template #noDiscount><span>-</span></ng-template>
+        <ng-template #noDiscount><span>0</span></ng-template>
       </li>
     </ul>
   </div>
