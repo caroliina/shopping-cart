@@ -4,7 +4,7 @@ Cabify shopping cart app with Angular 8 + [Angular CLI](https://cli.angular.io/)
 
 ## Description
 
-This is a simple SPA for an online shop. When a product is added/removed the values and discounts are changed accordingly in order summary.
+This is a simple SPA for an online shop. When a product is added/removed the total values and discounts are changed accordingly in order summary.
 
 ## Quick start
 
