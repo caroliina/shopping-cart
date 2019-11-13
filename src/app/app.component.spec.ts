@@ -28,6 +28,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.products h1').textContent).toContain('Shopping cart');
-    expect(compiled.querySelector('.summary h1').textContent).toContain('Order Summary');
+    expect(compiled.querySelector('.summary h1').textContent).toContain('Order summary');
   });
 });

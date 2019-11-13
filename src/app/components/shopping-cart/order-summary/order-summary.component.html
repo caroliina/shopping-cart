@@ -1,5 +1,5 @@
 <aside class="summary">
-  <h1 class="main">Order Summary</h1>
+  <h1 class="main">Order summary</h1>
   <ul class="summary-items wrapper border">
     <li>
       <span class="summary-items-number">{{ productsCount }} items </span>
@@ -12,7 +12,7 @@
     <h2>Discounts</h2>
     <ul>
       <li *ngFor="let rule of pricingRules">
-        <span>{{ rule.name }}</span>
+        <span class="discount">{{ rule.name }}</span>
         <span *ngIf="rule.discount > 0; else noDiscount">-{{ rule.discount }}€</span>
         <ng-template #noDiscount><span>-</span></ng-template>
       </li>

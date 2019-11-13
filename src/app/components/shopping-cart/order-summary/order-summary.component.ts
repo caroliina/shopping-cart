@@ -8,7 +8,7 @@ import { PricingRule } from '../../../entities/pricing-rule.entity';
 })
 
 export class OrderSummaryComponent {
-  @Input() values: any;
+  @Input() values: any = [];
   @Input() productsCount: number;
   @Input() pricingRules: PricingRule[];
 }
