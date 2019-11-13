@@ -2,21 +2,27 @@
   <h1 class="main">Order Summary</h1>
   <ul class="summary-items wrapper border">
     <li>
-      <span class="summary-items-number"> Items </span><span class="summary-items-price"><span class="currency">{{ values.total }}€</span></span>
+      <span class="summary-items-number">{{ productsCount }} items </span>
+      <span class="summary-items-price">
+        <span class="currency">{{ values.total }}€</span>
+      </span>
     </li>
   </ul>
   <div class="summary-discounts wrapper-half border">
     <h2>Discounts</h2>
     <ul>
       <li *ngFor="let rule of pricingRules">
-        <span>{{ rule.name }}</span><span>-{{ rule.discount }}€</span>
+        <span>{{ rule.name }}</span>
+        <span *ngIf="rule.discount > 0; else noDiscount">-{{ rule.discount }}€</span>
+        <ng-template #noDiscount><span>-</span></ng-template>
       </li>
     </ul>
   </div>
   <div class="summary-total wrapper">
     <ul>
       <li>
-        <span class="summary-total-cost">Total cost</span><span class="summary-total-price">{{ values.total - values.discount }}€</span>
+        <span class="summary-total-cost">Total cost</span>
+        <span class="summary-total-price">{{ values.total - values.discount }}€</span>
       </li>
     </ul>
     <button type="submit">Checkout</button>

@@ -21,14 +21,22 @@ export class Checkout {
   }
 
   total(): any {
-    this.values.discount = this.scanned.reduce((prev, cur) => prev + cur.discount, 0);
-    this.values.total = this.scanned.reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
+    this.values.discount = this.calculateDiscount();
+    this.values.total = this.calculateTotal();
     return this.values;
   }
 
   private updateScannedProducts(product: Product): void {
     const index = this.scanned.findIndex((p) => p.id === product.id);
     index === -1 ? this.scanned.push(product) : this.scanned[index] = product;
+  }
+
+  private calculateDiscount(): number {
+    return this.scanned.reduce((prev, cur) => prev + cur.discount, 0);
+  }
+
+  private calculateTotal(): number {
+    return this.scanned.reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
   }
 
 }

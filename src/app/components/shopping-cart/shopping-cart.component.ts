@@ -7,7 +7,8 @@ import { Checkout } from '../../classes/checkout/checkout'
 
 @Component({
   selector: 'shopping-cart',
-  templateUrl: 'shopping-cart.component.html'
+  templateUrl: 'shopping-cart.component.html',
+  styleUrls: ['./shopping-cart.component.css']
 })
 
 export class ShoppingCartComponent implements OnInit {
@@ -16,6 +17,7 @@ export class ShoppingCartComponent implements OnInit {
     total: 0,
     discount: 0
   }
+  productsCount = 0;
   private checkOut: Checkout;
   private pricingRules: PricingRule[];
 
@@ -35,6 +37,7 @@ export class ShoppingCartComponent implements OnInit {
       product.quantity -= 1;
       this.checkOut.scan(product);
       this.values = { ...this.checkOut.total() };
+      this.productsCount = this.countProducts();
     }
   }
 
@@ -42,5 +45,10 @@ export class ShoppingCartComponent implements OnInit {
     product.quantity += 1;
     this.checkOut.scan(product);
     this.values = { ...this.checkOut.total() };
+    this.productsCount = this.countProducts();
+  }
+
+  private countProducts(): number {
+    return this.products.reduce((prev, cur) => prev + cur.quantity, 0);
   }
 }
